@@ -2,7 +2,7 @@
 title: Allium website, GitBook documentation, and original contract repository
 type: feature
 created: 2026-10-03
-status: in-review
+status: done
 baseline_commit: NO_VCS
 repository_visibility: public
 context:
@@ -59,9 +59,9 @@ context:
 - [x] `docs/`, `.gitbook.yaml`: write complete public pages, summary/navigation, and sync configuration; migrate sourced material without internal instructions.
 - [x] `src/App.tsx`, CSS, metadata: shorten toward 1,000 words; retain story, farm ambition, Field Notes, essential disclosures, and topic previews.
 - [x] `vite.config.ts`, build scripts: publish readable static documentation from the same Markdown; migrate every internal-plan download caller and remove `public/onion-plan.md`.
-- [ ] Git/README: initialize, commit, create/push `eiszazel/allium` with approved visibility, and associate existing Vercel deployment plus GitBook root.
+- [x] Git/README: initialize, commit, create/push `eiszazel/allium` with approved visibility, and associate existing Vercel deployment plus GitBook root.
 - [x] GitBook: enable GitHub sync/publication with authorized access; otherwise deliver working public docs and identify the precise remote authorization dependency.
-- [ ] Build/browser/contract verification: prove behavior and navigation, exclude secrets/generated files, and publish/inspect the existing Vercel project.
+- [x] Build/browser/contract verification: prove behavior and navigation, exclude secrets/generated files, and publish/inspect the existing Vercel project.
 
 **Acceptance Criteria:**
 - Given a community visitor, when reading the homepage, then the story and token/farm boundaries are understandable without technical prerequisites.
@@ -77,3 +77,43 @@ context:
 - Compare archive/source bytes and scan tracked files for secrets/generated artifacts before push.
 - Browser: desktop/mobile, docs/topic/source links, keyboard access, JavaScript-disabled reading, and direct-route refresh.
 - Public deployment/GitHub: readable homepage/docs routes; actual repository URL and approved visibility.
+
+## Release Evidence
+
+- Public repository: https://github.com/eiszazel/allium — `main`, public; existing Vercel project connected.
+- Website: https://allium-somosenece.vercel.app — revised Gazette, 840 main-content words.
+- Public reference: https://allium-somosenece.vercel.app/docs/ — ten topic routes returned HTTP 200.
+- Original source matched the ZIP byte-for-byte; pinned compilation and local EVM supply/transfer/allowance/constructor checks passed, without network transactions.
+- Lint, TypeScript/build, local/static/mobile navigation, development styling, public direct refresh, and browser screenshots passed. Public browser reported no errors.
+- Explicit source staging and credential-pattern scan excluded secrets, provisioning state, and generated artifacts.
+- Three independent source-only reviews found no actionable defects.
+- Remote GitBook sync remains unconnected: available session requires authentication. Approved same-source public docs are delivered; no GitBook account or publication is fabricated.
+
+## Suggested Review Order
+
+**Community and reference split**
+
+- Start with the concise Gazette, visible boundaries, and topic-level reference links.
+  [`App.tsx:1`](src/App.tsx#L1)
+- Public reference prose is separate from internal project and release plans.
+  [`docs/README.md:1`](docs/README.md#L1)
+- Generate development and production documentation from the same Markdown source.
+  [`docs.ts:1`](scripts/docs.ts#L1)
+- Inspect token facts, founder-interest disclosures, and undeployed-status boundaries.
+  [`token.md:1`](docs/token.md#L1)
+
+**Original contract and reproducibility**
+
+- Preserve the archive contract exactly, without modifying economics or deploying.
+  [`Bulb.sol:1`](contracts/Bulb.sol#L1)
+- Enforce pinned dependencies/settings and fail compilation without replacing artifacts.
+  [`build-contract.mjs:17`](scripts/build-contract.mjs#L17)
+
+**Integration and publication controls**
+
+- Select public docs as the GitBook source root; remote authorization remains separate.
+  [`.gitbook.yaml:1`](.gitbook.yaml#L1)
+- Integrate static documentation with the existing prerendered frontend build.
+  [`vite.config.ts:1`](vite.config.ts#L1)
+- Keep credentials, provider linkage, dependencies, and generated artifacts out of Git.
+  [`.gitignore:1`](.gitignore#L1)

@@ -39,7 +39,7 @@ The contract compiler emits ignored `contracts/out/Bulb.json`. It pins Solidity 
 
 ## Vercel deployment
 
-Use the existing `somosenece/allium` project, not a replacement. `.vercel/` is intentionally ignored; a fresh checkout uses `vercel link` to select that project, followed by `vercel deploy --prod`. The Git repository association is configured separately from GitBook publication; a failed remote authorization must not be described as a successful connection.
+Use the existing `somosenece/allium` project, not a replacement. It is connected to `https://github.com/eiszazel/allium` through Vercel's Git integration. `.vercel/` is intentionally ignored; a fresh checkout uses `vercel link` to select that project, followed by `vercel deploy --prod`. GitBook publication remains a separate, unconnected integration.
 
 `allium-somosenece.vercel.app` is the public production address. `allium.markets` was attached previously but custom-domain DNS remains an external dependency; no domain purchase or DNS change is part of this release. Recheck the provider's current requirements before changing the registrar.
 
@@ -57,6 +57,9 @@ The user-supplied `onion_farm_memecoin_narrative_game_t0gg25.zip` provides the a
 - ESLint, TypeScript/Vite production compilation, and pinned contract compilation passed.
 - Original contract bytes matched the ZIP. A throwaway local EthereumJS VM exercised supply, initial allocation, metadata, transfers, allowances, rejected overspending with unchanged balances, and zero-address constructor rejection. No network transactions; not a formal audit.
 - Actual browser smoke covered the homepage-to-docs action, all ten reference routes, desktop/mobile screenshots, 320px page boundaries, keyboard mobile navigation, documentation skip link, direct refresh, and JavaScript-disabled reading. No browser errors observed.
+- Published the public `eiszazel/allium` repository on `main` and connected the existing Vercel project. Secrets/generated paths were excluded; the source scan found no credential patterns.
+- Public production smoke: all ten reference routes returned HTTP 200; desktop Gazette and mobile documentation screenshots inspected. Live 375px static Field Notes navigation and docs refresh passed with no page overflow or browser errors.
+- Three independent source-only reviews returned no findings: adversarial, edge-case, and acceptance review.
 
 ## Release boundaries
 
